@@ -1,0 +1,57 @@
+﻿<Page
+    x:Class="PoneNaviationApp2.Views.Page2"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PoneNaviationApp2.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Height="806.333" Width="510.667">
+
+    <Grid Background="#FFFCFCFC"
+          EntranceNavigationTransitionInfo.IsTargetElement="True" Margin="0,0,-34.333,100.333">
+        <Canvas HorizontalAlignment="Left" Height="183" VerticalAlignment="Top" Width="477" Background="#FFF0EEEE" Margin="24,34,0,0">
+            <TextBlock x:Name="textBlock2" Canvas.Left="124" TextWrapping="Wrap" Text="Mobile Web Applications - SS2016" Canvas.Top="87" Height="33" Width="291" Foreground="#FF292929" FontSize="18"/>
+            <TextBlock x:Name="textBlock2_Copy" Canvas.Left="107" TextWrapping="Wrap" Text="University of Fulda: LaTeX Editor by Sami" Canvas.Top="125" Height="33" Width="339" Foreground="#FF292929" FontSize="18"/>
+            <Image x:Name="image" Height="82" Width="258" Source="ms-appx:///App-Icons/hochschule_fulda_logo.png"/>
+        </Canvas>
+        <Button x:Name="button" Content="New LaTeX Document"  HorizontalAlignment="Left" Margin="24,250,0,0" VerticalAlignment="Top" Width="477" Height="71" Click="button_Click"  Background="#CC0925BD"  />
+        <RichEditBox x:Name="editor" Background="White" RelativePanel.Below="openFileButton" 
+                  RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" Margin="24,330,0,0" TextChanged="editor_TextChanged" RenderTransformOrigin="0.5,0.5" Height="150" PlaceholderText="" Visibility="Collapsed" Width="477" HorizontalAlignment="Left" VerticalAlignment="Top" KeyUp="editor_KeyUp" PointerMoved="editor_PointerMoved" PointerWheelChanged="editor_PointerWheelChanged"  >
+
+
+
+        </RichEditBox>
+        <Button x:Name="button_Copy" Content="Load LaTeX Document" HorizontalAlignment="Left" Margin="24,332,0,0" VerticalAlignment="Top" Height="71" Click="button_Copy_Click" Width="477" Background="#CC018E1C"/>
+        <Button x:Name="button1" Content="" HorizontalAlignment="Left" Margin="24,219,0,0" VerticalAlignment="Top" Height="32" Width="55" FontSize="12" FontWeight="Black" AutomationProperties.PositionInSet="-2" RenderTransformOrigin="0.5,0.5" AutomationProperties.LiveSetting="Assertive" FontStretch="Condensed" CharacterSpacing="2" Click="button1_Click">
+            <Button.RenderTransform>
+                <CompositeTransform TranslateX="1"/>
+            </Button.RenderTransform>
+            <Button.Background>
+                <ImageBrush Stretch="None" ImageSource="ms-appx:///App-Icons/store-server.png">
+                    <ImageBrush.RelativeTransform>
+                        <CompositeTransform CenterY="0.5" CenterX="0.5"/>
+                    </ImageBrush.RelativeTransform>
+                </ImageBrush>
+            </Button.Background>
+        </Button>
+     
+        <ListBox x:Name="lstData" HorizontalAlignment="Left" Margin="10,571,0,33.142" Width="497" Background="WhiteSmoke"   ScrollViewer.VerticalScrollBarVisibility="Visible" UseLayoutRounding="False" d:LayoutRounding="Auto">
+            <ListBox.RenderTransform>
+                <CompositeTransform SkewY="-0.522" TranslateY="-2.491"/>
+            </ListBox.RenderTransform>
+            <ListBox.ItemTemplate>
+                <DataTemplate >
+                    <StackPanel  Orientation="Horizontal" >
+                        <TextBlock Margin="0,0,0,0" Text="LaTeX documnet: " VerticalAlignment="Top"   FontSize="15.667"/>
+                        <TextBlock Margin="0,0,0,0" Text="{Binding Name}" VerticalAlignment="Top"  FontWeight="Bold" FontSize="15.667"/>
+                        <Button  DataContext="{Binding ID}"  Margin="2,2,2,2"   Content="Load File" HorizontalAlignment="Stretch"   VerticalAlignment="Stretch" Height="40" Width="80" Click="Open_Click" Foreground="White" FontWeight="Bold" Background="#FF3BC50F" Opacity="0.935" BorderThickness="2"  />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <TextBlock x:Name="footer" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="327" SelectionHighlightColor="#FF2FD416" Foreground="#FF1FB102" FontSize="8" RequestedTheme="Light" Margin="180,681,0,0">
+            Student Project   
+        <Hyperlink NavigateUri="www.hs-fulda.de">www.hs-fulda.de</Hyperlink>
+        </TextBlock>
+    </Grid>
+</Page>

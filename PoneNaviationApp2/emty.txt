@@ -1,0 +1,7 @@
+\documentclass{scrartcl} 
+\title{New-LTX-dokument} 
+\begin{document} 
+
+
+
+\end{document}
